@@ -16,6 +16,24 @@ function Arena(name, gladiators=[]) {
     }
 
     this.fight = function(){
+        if(this.gladiators[0].weapon === "Trident" && this.gladiators[1].weapon === "Spear"){
+            return this.gladiators.pop()
+        }
+        if(this.gladiators[1].weapon === "Trident" && this.gladiators[0].weapon === "Spear"){
+            return this.gladiators.shift()
+        }
+        if(this.gladiators[0].weapon === "Trident" && this.gladiators[1].weapon === "Club"){
+            return this.gladiators.pop()
+        }
+        if(this.gladiators[1].weapon === "Trident" && this.gladiators[0].weapon === "Club"){
+            return this.gladiators.shift()
+        }
+        if(this.gladiators[0].weapon === "Club" && this.gladiators[1].weapon === "Spear"){
+            return this.gladiators.pop()
+        }
+        if(this.gladiators[1].weapon === "Club" && this.gladiators[0].weapon === "Spear"){
+            return this.gladiators.shift()
+        }
         
     }
 
@@ -28,3 +46,7 @@ big.addGladiator(jon)
 big.addGladiator(moopie)
 
 console.log(big.gladiators)
+
+big.fight()
+
+console.log(big)
